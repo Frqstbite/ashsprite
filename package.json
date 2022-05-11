@@ -1,0 +1,18 @@
+{
+    "name": "ashsprite",
+    "displayName": "Ashsprite",
+    "description": "aseprite tools 4 me",
+    "version": "0.1",
+    "author": { "name": "Frqstbite",
+                "email": "frqstbite1001@gmail.com",
+                "url": "https://www.youtube.com/" },
+    "contributors": [ ],
+    "publisher": "Frqstbite",
+    "license": "CC-BY-4.0",
+    "categories": [ "Scripts" ],
+    "contributes": {
+      "scripts": [
+          { "path": "./main.lua" }
+      ]
+    }
+  }

@@ -1,19 +1,28 @@
 local PACKAGE = "com.frqstbite.ashsprite"
-local COMMANDS = {
+local COMMAND_NAMES = {
   "coordinateColor"
 }
+
+
+print("Initializing Ashsprite commands...")
+local commands = {}
+
+for _, name in next, COMMAND_NAMES do
+  local id = (PACKAGE .. ":" .. name)
+    local path = ("./commands/" .. name .. ".lua")
+    print("Initializing command " .. id .. "...")
+
+    commands[name] = dofile(path)
+    print("Done!")
+end
 
 
 function init(plugin)
     print("Ashsprite initializing...")
 
     -- Load commands
-    for _, name in next, COMMANDS do
-      local id = (PACKAGE .. ":" .. name)
-      print("Adding command" .. id .. "...")
-
-      local command = require("./commands/" .. name .. ".lua")
-      print("Required...")
+    for id, command in next, commands do
+      print("Adding command " .. id .. "...")
 
       plugin:newCommand({
         id = id,

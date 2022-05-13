@@ -19,7 +19,6 @@ function Command.CanRun()
     return true
 end
 
-
 function Command.Run()
     if not Command.CanRun() then --We check this just in case a keybind executes it
         return --TODO: this is probably not necessary
